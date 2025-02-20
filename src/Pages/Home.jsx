@@ -222,8 +222,8 @@ const Home = () => {
   };
 
   return (
-    <div style={{backgroundImage:`url(${flow})`}} className="h-[100vh] flex flex-col items-center justify-center">
-      <div className="box  w-[100vw] sm:w-[70vw] mx-auto p-6 bg-gray-900 text-white rounded-lg shadow-md h-[100vh] sm:h-[90vh]  ">
+    <div style={{backgroundImage:`url(${flow})`}} className=" flex flex-col items-center justify-center bg-cover">
+      <div className="box  w-[100vw] sm:w-[70vw] mx-auto p-6 bg-gray-900 text-white rounded-lg shadow-md h-[100vh]  ">
         <h2 className="text-2xl font-bold mb-1 text-center text-blue-400">
           LegendaryAI
         </h2>
@@ -236,7 +236,7 @@ const Home = () => {
           <p className="text-yellow-400">⏳ Initializing...</p>
         )}
 
-        <div className="h-86 sm:h-[400px]  overflow-y-auto bg-gray-800 p-4 rounded-lg shadow-sm">
+        <div className="h-86 sm:h-[450px]  overflow-y-auto bg-gray-800 p-4 rounded-lg shadow-sm">
           {messages.map((msg, index) => (
             <div
               key={index}
@@ -299,10 +299,10 @@ const Home = () => {
           ></textarea>
           <div className="flex flex-col items-center justify-center">
             <button
-              className="w-[80vw] sm:w-full bg-blue-500 text-white py-2 mt-2 rounded-lg hover:bg-blue-600 flex items-center justify-center gap-1 sm:gap-0"
+              className="w-[80vw] sm:w-full bg-blue-500 text-white py-2 mt-2 rounded-lg hover:bg-blue-600  gap-1 sm:gap-0"
              onClick={handleSend}
             >
-              Detect Language <img src="/src/assets/send-svgrepo-com.svg" width={25}/> 
+              Detect Language
             </button>
             <button
               className=" w-[80vw] sm:w-full bg-green-500 text-white py-2 mt-2 rounded-lg hover:bg-green-600"
