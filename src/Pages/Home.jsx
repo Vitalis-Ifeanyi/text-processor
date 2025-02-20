@@ -299,10 +299,10 @@ const Home = () => {
           ></textarea>
           <div className="flex flex-col items-center justify-center">
             <button
-              className="w-[80vw] sm:w-full bg-blue-500 text-white py-2 mt-2 rounded-lg hover:bg-blue-600"
+              className="w-[80vw] sm:w-full bg-blue-500 text-white py-2 mt-2 rounded-lg hover:bg-blue-600 flex items-center justify-center gap-1 sm:gap-0"
              onClick={handleSend}
             >
-              Detect Language 
+              Detect Language <img src="/src/assets/send-svgrepo-com.svg" width={25}/> 
             </button>
             <button
               className=" w-[80vw] sm:w-full bg-green-500 text-white py-2 mt-2 rounded-lg hover:bg-green-600"
