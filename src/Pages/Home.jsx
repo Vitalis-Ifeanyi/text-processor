@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import flow from '/src/assets/background.jpg'
+import flow from "/src/assets/background.jpg";
 
 const Home = () => {
   const [inputText, setInputText] = useState("");
@@ -222,21 +222,31 @@ const Home = () => {
   };
 
   return (
-    <div style={{backgroundImage:`url(${flow})`}} className=" flex flex-col items-center justify-center bg-cover">
-      <div className="box  w-[100vw] sm:w-[70vw] mx-auto p-6 bg-gray-900 text-white rounded-lg shadow-md h-[100vh]  ">
-        <h2 className="text-2xl font-bold mb-1 text-center text-blue-400">
-          LegendaryAI
-        </h2>
-        <p className="text-center mb-3">Translate and Summarize with me...</p>
+    <div
+      style={{ backgroundImage: `url(${flow})` }}
+      className=" flex flex-col items-center justify-center bg-cover"
+    >
+      <div className="box  w-[100vw] sm:w-[70vw] mx-auto px-4 py-1 sm:py-2 bg-gray-900 text-white rounded-lg shadow-md h-[100vh]  ">
+        <div className="flex flex-col sm:flex-row items-center justify-between">
+          <div>
+            <h2 className="text-2xl text-center sm:text-left font-bold mb-1 text-blue-400">
+              LegendaryAI
+            </h2>
+            <p className="text-center mb-1 sm:mb-3">
+              Translate and Summarize with me...
+            </p>
+          </div>
+          <div className="flex flex-col-reverse items-center sm:items-end">
+            {error && <p className="text-red-400 text-sm text-center sm:tet end">{error}</p>}
+            {detector && translator && summarizer ? (
+              <p className="text-green-400">✅ AI Services Ready</p>
+            ) : (
+              <p className="text-yellow-400">⏳ Initializing...</p>
+            )}
+          </div>
+        </div>
 
-        {error && <p className="text-red-400 text-sm">{error}</p>}
-        {detector && translator && summarizer ? (
-          <p className="text-green-400">✅ AI Services Ready</p>
-        ) : (
-          <p className="text-yellow-400">⏳ Initializing...</p>
-        )}
-
-        <div className="h-86 sm:h-[450px]  overflow-y-auto bg-gray-800 p-4 rounded-lg shadow-sm">
+        <div className="h-[405px] sm:h-[450px]  overflow-y-auto bg-gray-800 p-4 rounded-lg shadow-sm">
           {messages.map((msg, index) => (
             <div
               key={index}
@@ -259,7 +269,10 @@ const Home = () => {
                 )}
                 {msg.showTranslation && (
                   <p className="text-md italic text-black mt-1">
-                   <span className="font-bold text-amber-900">Translated:</span>  {msg.translation}
+                    <span className="font-bold text-amber-900">
+                      Translated:
+                    </span>{" "}
+                    {msg.translation}
                   </p>
                 )}
                 <select
@@ -300,7 +313,7 @@ const Home = () => {
           <div className="flex flex-col items-center justify-center">
             <button
               className="w-[80vw] sm:w-full bg-blue-500 text-white py-2 mt-2 rounded-lg hover:bg-blue-600  gap-1 sm:gap-0"
-             onClick={handleSend}
+              onClick={handleSend}
             >
               Detect Language
             </button>
